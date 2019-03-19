@@ -1,0 +1,37 @@
+
+
+<?php
+if(isset($_POST['submit'])){
+  //when user clicks submit
+
+  //load config file
+  require "../config.php";
+
+  try {
+    //try connect to the DB:
+    $connection = new PDO($dsn, $username, $password, $options);
+
+    $new_work = array(
+      "artistname" => $_POST['artistname'],
+      "worktitle" => $_POST['worktitle'],
+      "workdate" => $_POST['workdate'],
+      "worktype" => $_POST['worktype'],
+    );
+
+    $sql = "INSERT INTO works (artistname, worktitle, workdate, worktype)
+    VALUES (:artistname, :worktitle, :workdate, :worktype)";
+
+    //write to DB
+    $statement = $connection->prepare($sql);
+    $statement->execute($new_work);
+
+
+
+  } catch {
+    echo $sql . "<br>" . $error->getMessage();
+
+    }
+
+}
+
+ ?>
