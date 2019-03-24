@@ -1,9 +1,5 @@
 <?php include "../public/template/header.php"; ?>
 
-
-  <h1> Collection tracker</h1>
-
-
   <ul>
     <li>
       <a href="../public/create.php">Add an artwork</a>
