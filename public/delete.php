@@ -38,6 +38,7 @@ if (isset($_GET["id"])) {
         // if there is an error, tell us what it is
         echo $sql . "<br>" . $error->getMessage();
     }
+
 };
 
 // This code runs on page load

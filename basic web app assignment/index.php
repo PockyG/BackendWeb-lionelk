@@ -1,25 +1,15 @@
-<?php include "../public/template/header.php"; ?>
+<?php
+// Initialize the session
+session_start();
 
+// Check if the user is logged in, if not then redirect him to login page
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+    header("location: login.php");
+    exit;
+}
+if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+    header("location: listview.php");
+    exit;
+}
 
-  <h1> Collection tracker</h1>
-
-
-  <ul>
-    <li>
-      <a href="../public/create.php">Add an artwork</a>
-    </li>
-    <li>
-      <a href="../public/read.php">List all artworks</a>
-    </li>
-    <li>
-      <a href="../public/update.php"> Edit an artwork</a>
-    </li>
-    <li>
-      <a href="../public/delete.php">Delete an artwork</a>
-    </li>
-
-
-  </ul>
-
-
-<?php include "../public/template/footer.php"; ?>
+?>

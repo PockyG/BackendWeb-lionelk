@@ -1,10 +1,7 @@
 
 
 <?php
-echo '<script>console.log("Your stuff here")</script>';
 if(isset($_POST['submit'])){
-
-   echo '<script>console.log("Your stuff here")</script>';
 
   //when user clicks submit
 
